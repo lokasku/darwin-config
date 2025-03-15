@@ -1,6 +1,16 @@
-{username, ...}: {
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}: {
+  imports = [
+    ./core.nix
+    ./softwares
+  ];
+
   home = {
-    username = username;
+    inherit username;
     homeDirectory = "/Users/${username}";
     stateVersion = "25.05";
   };
