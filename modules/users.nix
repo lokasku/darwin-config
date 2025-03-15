@@ -8,7 +8,7 @@
       ${username} = {
         name = "lucas";
         home = "/Users/${username}";
-        shell = pkgs.bashInteractive;
+        shell = pkgs.bash;
         createHome = true;
       };
     };

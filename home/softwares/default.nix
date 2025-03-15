@@ -1,6 +1,8 @@
 {
   imports = [
     ./git.nix
-    ./vscode.nix
+    ./zsh.nix
+    ./starship.nix
+    ./zed.nix
   ];
 }

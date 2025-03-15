@@ -17,6 +17,9 @@
         };
       };
     };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+    };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -40,6 +43,9 @@
         };
       };
     };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+    };
     vide = {
       url = "github:bartekzer/vide";
       inputs = {
@@ -62,6 +68,7 @@
     self,
     darwin,
     nixpkgs,
+    mac-app-util,
     home-manager,
     nix-homebrew,
     homebrew-core,
@@ -71,25 +78,27 @@
   }: let
     system = "aarch64-darwin";
     username = "lucas";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    specialArgs = {inherit inputs pkgs username;};
+    specialArgs = {inherit inputs username system;};
   in {
-    formatter.${system} = pkgs.alejandra;
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
     darwinConfigurations = {
       mac = darwin.lib.darwinSystem {
         inherit system specialArgs;
         modules = [
           ./modules
 
+          mac-app-util.darwinModules.default
           home-manager.darwinModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import ./home;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = specialArgs;
+              sharedModules = [
+                mac-app-util.homeManagerModules.default
+              ];
+              users.${username} = import ./home;
+            };
           }
 
           nix-homebrew.darwinModules.nix-homebrew
@@ -97,13 +106,11 @@
             nix-homebrew = {
               enable = true;
               user = username;
-
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "homebrew/homebrew-bundle" = homebrew-bundle;
               };
-
               mutableTaps = false;
             };
           }

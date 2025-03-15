@@ -1,9 +1,17 @@
-{...}: {
+{username, ...}: {
   networking = {
     computerName = "Mac";
     hostName = "mac";
   };
-
+  security = {
+    pam = {
+      services = {
+        sudo_local = {
+          touchIdAuth = true;
+        };
+      };
+    };
+  };
   system = {
     keyboard = {
       enableKeyMapping = true;
@@ -32,7 +40,7 @@
       };
       dock = {
         largesize = 85;
-        tilesize = 55;
+        tilesize = 60;
         minimize-to-application = true;
         persistent-apps = [
           "/System/Applications/Launchpad.app"
@@ -43,7 +51,7 @@
           "/Applications/Spotify.app"
           "/Applications/Telegram.app"
           "/System/Applications/Messages.app"
-          "/Applications/Zed.app"
+          "/Users/${username}/Applications/Home Manager Trampolines/Zed.app"
           "/System/Applications/Mail.app"
           "/System/Applications/Maps.app"
           "/System/Applications/Notes.app"

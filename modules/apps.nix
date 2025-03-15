@@ -1,14 +1,9 @@
 {pkgs, ...}: {
-  environment = {
-    systemPackages = with pkgs; [
-      vim
-      git
-    ];
-  };
   homebrew = {
     enable = true;
     onActivation = {
       autoUpdate = true;
+      cleanup = "uninstall";
       upgrade = true;
     };
     global = {
@@ -19,7 +14,6 @@
       "discord"
       "telegram"
       "anki"
-      "zed"
       "chatgpt"
     ];
   };

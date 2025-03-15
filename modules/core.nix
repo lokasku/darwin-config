@@ -1,6 +1,8 @@
 {
   pkgs,
+  inputs,
   username,
+  system,
   ...
 }: {
   nix = {
@@ -27,9 +29,21 @@
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
   };
 
   system.stateVersion = 6;
+
+  programs = {
+    bash = {
+      enable = true;
+      completion = {
+        enable = true;
+      };
+    };
+  };
 
   time = {
     timeZone = "Europe/Paris";
