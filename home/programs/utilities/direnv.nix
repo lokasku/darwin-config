@@ -1,8 +1,10 @@
 {
   programs = {
-    enable = true;
-    nix-direnv = {
+    direnv = {
       enable = true;
+      nix-direnv = {
+        enable = true;
+      };
     };
   };
 }

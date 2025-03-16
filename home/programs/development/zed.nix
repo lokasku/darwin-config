@@ -16,7 +16,7 @@
         theme = {
           mode = "system";
           light = "macOS Classic Light";
-          dark = "Ayu Mirage";
+          dark = "One Dark";
         };
         icon_theme = {
           mode = "system";

@@ -1,5 +1,4 @@
-{username, ...}:
-{
+{username, ...}: {
   networking = {
     computerName = "Mac";
     hostName = "mac";
