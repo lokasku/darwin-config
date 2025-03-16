@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [
-    ./core.nix
-    ./softwares
+    ./base.nix
+    ./programs
   ];
 
   home = {

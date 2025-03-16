@@ -36,23 +36,7 @@
 
   system.stateVersion = 6;
 
-  programs = {
-    bash = {
-      enable = true;
-      completion = {
-        enable = true;
-      };
-    };
-  };
-
   time = {
     timeZone = "Europe/Paris";
-  };
-
-  power = {
-    sleep = {
-      computer = 5;
-      display = 5;
-    };
   };
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   homebrew = {
     enable = true;
     onActivation = {
@@ -16,6 +16,7 @@
       "anki"
       "chatgpt"
       "craft"
+      "raycast"
     ];
   };
 }

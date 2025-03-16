@@ -11,15 +11,7 @@
 
     sessionVariables = {
       EDITOR = "vide";
-    };
-  };
-
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv = {
-        enable = true;
-      };
+      VISUAL = "vide";
     };
   };
 }

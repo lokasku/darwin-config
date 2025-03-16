@@ -85,7 +85,8 @@
       mac = darwin.lib.darwinSystem {
         inherit system specialArgs;
         modules = [
-          ./modules
+          ./modules/darwin
+          ./modules/homebrew
 
           mac-app-util.darwinModules.default
           home-manager.darwinModules.home-manager

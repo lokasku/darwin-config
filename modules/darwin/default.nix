@@ -1,8 +1,8 @@
 {
   imports = [
     ./core.nix
-    ./users.nix
+    ./desktop.nix
     ./system.nix
-    ./apps.nix
+    ./users.nix
   ];
 }
