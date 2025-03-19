@@ -15,13 +15,22 @@
         };
         theme = {
           mode = "system";
-          light = "macOS Classic Light";
-          dark = "One Dark";
+          light = "Xcode Classic Light";
+          dark = "Xcode Classic Darker";
         };
         icon_theme = {
           mode = "system";
           light = "JetBrains New UI Icons (Light)";
           dark = "JetBrains New UI Icons (Dark)";
+        };
+        lsp = {
+          clangd = {
+            binary = {
+              path_lookup = true;
+              path = "clangd";
+              arguments = ["--header-insertion=never"];
+            };
+          };
         };
         ui_font_family = ".SystemUIFont";
         ui_font_size = 14;
