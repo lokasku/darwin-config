@@ -17,6 +17,7 @@
       "chatgpt"
       "craft"
       "raycast"
+      "obsidian"
     ];
   };
 }
