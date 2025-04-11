@@ -9,6 +9,9 @@
     global = {
       brewfile = true;
     };
+    masApps = {
+      iMovie = 408981434;
+    };
     casks = [
       "spotify"
       "discord"
