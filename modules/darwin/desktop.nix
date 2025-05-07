@@ -35,7 +35,6 @@
           "/Applications/ChatGPT.app"
           "/Applications/Discord.app"
           "/Applications/Spotify.app"
-          "/System/Applications/Music.app"
           "/Applications/Telegram.app"
           "/System/Applications/Messages.app"
           "/Users/${username}/Applications/Home Manager Trampolines/Zed.app"

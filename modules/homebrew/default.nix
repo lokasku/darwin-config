@@ -9,16 +9,15 @@
     global = {
       brewfile = true;
     };
-    masApps = {
-      iMovie = 408981434;
-    };
+    masApps = {};
     casks = [
+      "signal"
+      "whatsapp"
       "spotify"
       "discord"
       "telegram"
       "anki"
       "chatgpt"
-      "craft"
       "raycast"
       "obsidian"
     ];
