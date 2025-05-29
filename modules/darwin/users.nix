@@ -13,4 +13,7 @@
       };
     };
   };
+  system = {
+    primaryUser = "lucas";
+  };
 }
