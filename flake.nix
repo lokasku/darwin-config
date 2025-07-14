@@ -50,14 +50,6 @@
         };
       };
     };
-    lrk = {
-      url = "github:bartekzer/lrk";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
   };
 
   outputs = inputs @ {
@@ -90,6 +82,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = specialArgs;
+              backupFileExtension = "backup";
               sharedModules = [
                 mac-app-util.homeManagerModules.default
               ];

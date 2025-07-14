@@ -32,17 +32,15 @@
         persistent-apps = [
           "/System/Applications/Launchpad.app"
           "/Applications/Safari.app"
-          "/Applications/ChatGPT.app"
           "/Applications/Discord.app"
-          "/Applications/Spotify.app"
           "/Applications/Telegram.app"
           "/System/Applications/Messages.app"
-          "/Users/${username}/Applications/Home Manager Trampolines/Zed.app"
           "/System/Applications/Notes.app"
           "/Applications/Obsidian.app"
           "/System/Applications/Calendar.app"
           "/Applications/Anki.app"
-          "/System/Applications/Utilities/Terminal.app"
+          "/Applications/Ghostty.app"
+          "/Users/lucas/Applications/Home Manager Apps/Visual Studio Code.app"
         ];
       };
       finder = {

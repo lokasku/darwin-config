@@ -1,7 +1,8 @@
 {
   imports = [
     ./git.nix
-    # ./vscode.nix
+    ./vscode.nix
     ./zed.nix
+    ./ghostty
   ];
 }
